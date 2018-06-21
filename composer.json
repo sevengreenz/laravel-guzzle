@@ -1,0 +1,43 @@
+{
+  "name": "sevengreenz/laravel-guzzle",
+  "description":
+    "An easy way to use the Guzzle HTTP client in your Laravel applications.",
+  "type": "library",
+  "require": {
+    "php": "^7.0",
+    "guzzlehttp/guzzle": "^6.3.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "sevengreenz",
+      "email": "webmaster@sevengreenz.net"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "SevenGreenz\\LaravelGuzzle\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "SevenGreenz\\LaravelGuzzle\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": ["SevenGreenz\\LaravelGuzzle\\ServiceProvider"],
+      "aliases": {
+        "Http": "SevenGreenz\\LaravelGuzzle\\Facade"
+      }
+    }
+  },
+  "scripts": {
+    "csfix": "php-cs-fixer fix --diff -v --config .php_cs.dist"
+  },
+  "minimum-stability": "stable",
+  "require-dev": {
+    "orchestra/testbench": "~3.0",
+    "friendsofphp/php-cs-fixer": "^2.12"
+  }
+}
