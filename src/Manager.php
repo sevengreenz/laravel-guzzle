@@ -47,7 +47,7 @@ class Manager
     public function connection(string $name = ''): Client
     {
         if (empty($name)) {
-            $name = $this->app['config']['http']['default_connetion'];
+            $name = $this->app['config']['guzzle']['default_connetion'];
         }
 
         if (!isset($this->connection[$name])) {
@@ -64,7 +64,7 @@ class Manager
      */
     protected function makeConnection(string $name): Client
     {
-        $config = array_get($this->app['config']['http']['connections'], $name);
+        $config = array_get($this->app['config']['guzzle']['connections'], $name);
 
         return $this->factory->make($config);
     }

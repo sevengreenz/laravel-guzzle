@@ -16,7 +16,7 @@ abstract class TestCase extends BaseTestCase
     protected function getPackageAliases($app)
     {
         return [
-            'Http' => Facade::class,
+            'Guzzle' => Facade::class,
         ];
     }
 }

@@ -9,7 +9,7 @@ class ServiceProviderTest extends TestCase
 {
     public function testRegister()
     {
-        $factory = app('http.factory');
+        $factory = app('guzzle.factory');
         $this->assertInstanceOf(Factory::class, $factory);
     }
 }

@@ -16,7 +16,7 @@ class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         $this->publishes([
-            sprintf('%s/config/http.php', dirname(__DIR__)) => config_path('http.php')
+            sprintf('%s/config/guzzle.php', dirname(__DIR__)) => config_path('guzzle.php')
         ]);
     }
 
@@ -29,12 +29,12 @@ class ServiceProvider extends BaseServiceProvider
     {
         $app = $this->app;
 
-        $app->singleton('http.factory', function ($app) {
+        $app->singleton('guzzle.factory', function ($app) {
             return new Factory();
         });
 
-        $app->singleton('http', function ($app) {
-            return new Manager($app, $app['http.factory']);
+        $app->singleton('guzzle', function ($app) {
+            return new Manager($app, $app['guzzle.factory']);
         });
     }
 }
