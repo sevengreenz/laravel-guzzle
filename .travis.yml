@@ -8,4 +8,8 @@ before_script:
   - composer install
 
 script:
+  - mkdir -p build/logs
   - vendor/bin/phpunit
+
+after_scripts:
+  - travis_retry php vendor/bin/coveralls -v
