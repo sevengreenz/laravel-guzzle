@@ -2,8 +2,8 @@
 
 namespace SevenGreenz\LaravelGuzzle\Tests;
 
-use SevenGreenz\LaravelGuzzle\Factory;
 use GuzzleHttp\ClientInterface;
+use SevenGreenz\LaravelGuzzle\Factory;
 
 class FactoryTest extends TestCase
 {

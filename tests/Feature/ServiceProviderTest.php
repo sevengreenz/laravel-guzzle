@@ -2,7 +2,6 @@
 
 namespace SevenGreenz\LaravelGuzzle\Tests;
 
-use SevenGreenz\LaravelGuzzle\ServciceProvider;
 use SevenGreenz\LaravelGuzzle\Factory;
 
 class ServiceProviderTest extends TestCase

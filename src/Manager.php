@@ -2,7 +2,7 @@
 
 namespace SevenGreenz\LaravelGuzzle;
 
-use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 use Illuminate\Contracts\Foundation\Application;
 
 class Manager
@@ -44,10 +44,10 @@ class Manager
      *
      * @param string $name
      */
-    public function connection(string $name = ''): Client
+    public function connection(string $name = ''): ClientInterface
     {
         if (empty($name)) {
-            $name = $this->app['config']['guzzle']['default_connetion'];
+            $name = $this->app['config']['guzzle']['default_connection'];
         }
 
         if (!isset($this->connection[$name])) {
@@ -62,7 +62,7 @@ class Manager
      *
      * @param string $name
      */
-    protected function makeConnection(string $name): Client
+    protected function makeConnection(string $name): ClientInterface
     {
         $config = array_get($this->app['config']['guzzle']['connections'], $name);
 
