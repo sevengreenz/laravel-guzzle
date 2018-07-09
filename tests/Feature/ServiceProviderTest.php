@@ -3,6 +3,7 @@
 namespace SevenGreenz\LaravelGuzzle\Tests;
 
 use SevenGreenz\LaravelGuzzle\Factory;
+use SevenGreenz\LaravelGuzzle\Manager;
 
 class ServiceProviderTest extends TestCase
 {
@@ -10,5 +11,8 @@ class ServiceProviderTest extends TestCase
     {
         $factory = app('guzzle.factory');
         $this->assertInstanceOf(Factory::class, $factory);
+
+        $factory = app('guzzle');
+        $this->assertInstanceOf(Manager::class, $factory);
     }
 }
